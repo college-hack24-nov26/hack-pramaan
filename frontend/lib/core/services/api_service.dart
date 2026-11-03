@@ -16,6 +16,9 @@ class ApiService {
   String? _cachedWorkingHost;
 
   final List<String> _backendHosts = [
+    "http://192.168.4.29:8000/api/v1",
+    "https://pramaan-9ewp.onrender.com/api/v1",
+    "http://192.168.3.16:8000/api/v1",
     "http://192.168.5.59:8000/api/v1",
     "http://127.0.0.1:8000/api/v1",
     "http://10.40.213.222/api/v1",
