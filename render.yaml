@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: pramaan-backend
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.5
+      - key: ENVIRONMENT
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB_NAME
+        value: pramaan_db
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: METEOBLUE_API_KEY
+        sync: false
+      - key: CEHUB_API_KEY
+        sync: false
+      - key: GOOGLE_APPS_SCRIPT_URL
+        sync: false
+
